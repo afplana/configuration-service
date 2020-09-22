@@ -15,4 +15,4 @@ WORKDIR ${WORKDIR}
 COPY --from=BUILD ${WORKDIR}/target/*.jar ${WORKDIR}/app.jar
 EXPOSE 8090
 
-CMD ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Xmx256M", "-jar", "app.jar"]
